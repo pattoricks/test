@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@300;400;500;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 6%;
+    --foreground: 0 0% 98%;
+  }
+  
+  body {
+    @apply bg-youtube-dark text-foreground;
+    font-family: 'Roboto', sans-serif;
+  }
+}
+
+@layer components {
+  .sidebar-link {
+    @apply flex items-center space-x-4 p-3 rounded-lg transition-colors duration-200 hover:bg-white/10;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-xl;
+  }
+  
+  .btn-primary {
+    @apply bg-youtube-red hover:bg-red-700 text-white px-6 py-3 rounded-full font-bold transition-colors;
+  }
+  
+  .btn-secondary {
+    @apply bg-youtube-gray hover:bg-gray-700 text-white px-6 py-3 rounded-full font-bold transition-colors;
+  }
+}
+
+/* Atau gunakan cara yang lebih aman tanpa @layer */
+.custom-card-hover {
+  transition: all 0.3s ease-in-out;
+}
+
+.custom-card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+}
